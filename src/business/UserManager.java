@@ -10,7 +10,6 @@ public class UserManager {
         this.userDao = new UserDao();
     }
     public User findByLogin (String username, String password){
-        return this.userDao.findByLogin(username,password);
-
+         return this.userDao.findByLogin(username,password);
     }
 }

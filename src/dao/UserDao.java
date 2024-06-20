@@ -1,8 +1,8 @@
 package src.dao;
 
-import src.core.Db;
-import src.core.Helper;
 import src.entity.User;
+import src.core.Db;
+
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -36,11 +36,10 @@ public class UserDao {
         try {
             PreparedStatement pr = this.con.prepareStatement(query);
             pr.setString(1, username);
-            pr.setString(2,password);
+            pr.setString(2, password);
             ResultSet rs = pr.executeQuery();
             if (rs.next()){
                 obj= this.match(rs);
-
             }
         }catch (SQLException e){
             e.printStackTrace();
